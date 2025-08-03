@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nikhil Kumar | Portfolio</title>
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- Font Awesome for Social Icons -->
+  <script src="https://kit.fontawesome.com/a4f0a22ac0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --side-bg: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+      --card: #181818;
+    }
+
+    body, [data-theme='dark'] {
+      --bg: #000;
+      --side-bg: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+      --card: #181818;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      transition: all 0.3s ease;
+      min-height: 100vh;
+    }
+
+    aside {
+      width: 260px;
+      background: #232323;
+      padding: 40px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .theme-toggle, .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 100;
+      padding: 8px 14px;
+      background: var(--card);
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: linear-gradient(145deg, #d1c4e9, #ede7f6);
+    }
+
+    .profile-info h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .profile-info p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      margin: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover .material-symbols-outlined {
+      transform: translateY(-3px);
+    }
+
+    nav a:hover {
+      transform: translateY(-4px);
+    }
+
+    nav a.active {
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+      margin-top: auto;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent);
+    }
+
+    main, .main-content {
+      flex-grow: 1;
+      padding: 60px;
+      margin-left: 240px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      padding: 40px 0;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .intro-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+
+    .intro img {
+      height: 320px;
+      width: 280px;
+      object-fit: cover;
+      border-radius: 30% 30% 0 0;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .intro img {
+        height: 260px;
+        width: auto;
+      }
+    }
+
+    .btn {
+      background: none;
+      border: 1px solid var(--text);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .badge {
+      font-size: 0.85rem;
+      color: #027a48;
+      background: #d1fadf;
+      padding: 6px 12px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .skills, .projects {
+      margin-top: 60px;
+    }
+
+    .skills h2, .projects h2, .projects h4 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .skills-grid, .projects-grid, .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill, .project, .skill-card {
+      background: var(--card);
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .skill-card:hover, .project:hover, .skill:hover {
+      transform: translateY(-4px);
+    }
+
+    @keyframes movingShadow {
+      0% { box-shadow: 0 8px 40px rgba(0,0,0,0.45); }
+      50% { box-shadow: 0 24px 64px rgba(0,0,0,0.55); }
+      100% { box-shadow: 0 8px 40px rgba(0,0,0,0.45); }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      main, .main-content {
+        padding: 30px;
+      }
+
+      .theme-toggle {
+        top: 10px;
+        right: 10px;
+      }
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .project-card {
+      background-color: var(--card);
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      max-width: 300px;
+      flex: 1;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body class="dark-mode" data-theme="dark">
+<!-- Remaining HTML stays unchanged -->
+
+
+  <aside>
+    <div>
+      <div class="profile-card">
+        <img src="static/images/nikhil.jpg" alt="Nikhil Kumar">
+        <div class="profile-info">
+          <h2>Nikhil Kumar</h2>
+          <p>Software Developer & Creator</p>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+      <nav>
+        <a href="/" class="active">
+          <span class="material-symbols-outlined">home</span>
+          <span>Home</span>
+        </a>
+        <a href="/about">
+          <span class="material-symbols-outlined">person</span>
+          <span>About</span>
+        </a>
+        <a href="/projects">
+          <span class="material-symbols-outlined">work</span>
+          <span>Projects</span>
+        </a>
+        <a href="/contact">
+          <span class="material-symbols-outlined">mail</span>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="social-icons" style="display: flex; justify-content: space-between; align-items: center; padding: 30px 0 0 0;">
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank" aria-label="YouTube"><i class="fab fa-youtube" style="font-size:2rem;"></i></a>
+      <a href="https://www.instagram.com/nikhil__shetty___/?__pwa=1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" style="font-size:2rem;"></i></a>
+      <a href="https://github.com/nikhilkumar1104" target="_blank" aria-label="GitHub"><i class="fab fa-github" style="font-size:2rem;"></i></a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" style="font-size:2rem;"></i></a>
+    </div>
+  </aside>
+
+  <main>
+    <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 10px;">
+      <span class="badge" style="background: #232323; color: #fff; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; box-shadow: 0 2px 12px rgba(0,0,0,0.12);">🟢 Available for Work</span>
+      <a href="static/cv/Nikhil.pdf" download class="btn" style="background: #232323; color: #fff; border: none; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 12px rgba(0,0,0,0.12); margin-left: 850px; margin-top: -2px;">Download CV</a>
+    </div>
+    <section class="hero">
+      <div class="main-content">
+        <div class="intro">
+          <div class="intro-text" style="max-width: 650px; margin-left: -270px;">
+            <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 18px; line-height: 1.1; color: var(--text);">
+              Hey There,<br>I'm Nikhil Kumar
+            </h1>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: var(--text); line-height: 1.5;">
+              I’m a passionate software developer who enjoys building smart, scalable web and AI solutions using modern tech stacks. I love turning ideas into reality and collaborating to solve real-world problems. Let's connect and create something extraordinary!
+            </p>
+            <div style="display: flex; justify-content: flex-start;">
+              <button class="btn" onclick="window.location.href='/about'" style="font-size: 1.2rem; padding: 16px 32px; border-radius: 12px; background: #232323; color: #fff; font-weight: 500; border: none;">
+  More about me →
+</button>
+
+            </div>
+          </div>
+          <img src="static/images/nikhil.jpg" alt="Nikhil Photo" style="margin-left: -50px; width: 340px; height: 400px; box-shadow: 0 8px 40px rgba(0,0,0,0.45); border-radius: 30% 30% 0 0; object-fit: cover; animation: movingShadow 3s ease-in-out infinite;">
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>My Skill-Set</h2>
+      <div class="skill-grid">
+        <div class="skill-card">🐍 Python</div>
+        <div class="skill-card">🌐 Flask</div>
+        <div class="skill-card">🛢️ MySQL</div>
+        <div class="skill-card">⚛️ React.js</div>
+        <div class="skill-card">🐳 Docker</div>
+        <div class="skill-card">🖌️ HTML & CSS</div>
+        <div class="skill-card">🔧 Git & GitHub</div>
+        <div class="skill-card">📊 Streamlit</div>
+        <div class="skill-card">🎥 OpenCV</div>
+        <div class="skill-card">🤖 Machine Learning</div>
+        <div class="skill-card">🎬 Video Editing</div>
+        <div class="skill-card">📱 Content Creation</div>
+        <div class="skill-card">📈 SEO & Marketing</div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h4>🚀 My Projects</h4>
+      <div class="projects-grid">
+        <a href="/projects/gait" class="project-card">
+        <img src="static/project/gait.jpeg" alt="Human Gait AI">
+        <h3>Human Gait AI Detection</h3>
+        <p>AI | Python | Flask | OpenCV | MySQL</p>
+      </a>
+
+
+      <a href="/projects/petrolpump" class="project-card">
+        <img src="static/project/petrolpump.jpg" alt="Petrol Pump">
+        <h3>Petrol Pump Management System</h3>
+        <p>Streamlit | MySQL | Pandas | Python</p>
+      </a>
+
+      <a href="/projects/stock" class="project-card">
+        <img src="static/project/stcok.png" alt="Stock Forecasting">
+        <h3>Stock Price Visualization</h3>
+        <p>Dash | Plotly | YFinance | scikit-learn</p>
+      </a>
+
+      <a href="/projects/crm" class="project-card">
+        <img src="static/project/crm.jpg" alt="CRM Internship">
+        <h3>CRM System (Internship)</h3>
+        <p>React | Node | MySQL | Docker</p>
+      </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

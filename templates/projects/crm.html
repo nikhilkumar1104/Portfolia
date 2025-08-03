@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRM System – Nikhil Kumar</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a4f0a22ac0.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000;
+      --card: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    aside {
+      width: 260px;
+      background: #232323;
+      padding: 40px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .profile-info h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .profile-info p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      margin: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover .material-symbols-outlined {
+      transform: translateY(-3px);
+    }
+
+    nav a:hover {
+      transform: translateY(-4px);
+    }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+      margin-top: auto;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 60px;
+      margin-left: 260px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .project-img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .project-description strong {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside>
+    <div>
+      <div class="profile-card">
+        <img src="/static/images/nikhil.jpg" alt="Nikhil Kumar">
+        <div class="profile-info">
+          <h2>Nikhil Kumar</h2>
+          <p>Software Developer & Creator</p>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+      <nav>
+        <a href="/"><span class="material-symbols-outlined">home</span><span>Home</span></a>
+        <a href="/about"><span class="material-symbols-outlined">person</span><span>About</span></a>
+        <a href="/projects" class="active"><span class="material-symbols-outlined">work</span><span>Projects</span></a>
+        <a href="/contact"><span class="material-symbols-outlined">mail</span><span>Contact</span></a>
+      </nav>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/nikhil__shetty___/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <h1>📁 CRM System – Internship Project</h1>
+    <img src="/static/project/crm.jpg" alt="CRM Project" class="project-img">
+
+    <div class="project-description">
+      <p>
+        During my internship at <strong>Ukshati Technologies Pvt. Ltd.</strong>, I was involved in building a full-featured <strong>CRM System</strong> using <strong>React.js, Node.js, MySQL, and Docker</strong>. I also served as the <strong>Scrum Master</strong> for the CRM team.
+      </p>
+      <br>
+      <p>
+        The system allowed businesses to manage:
+        <ul>
+          <li>Customer Records</li>
+          <li>Project Assignments</li>
+          <li>Follow-ups and Reminders</li>
+          <li>Quotations and Revisions</li>
+          <li>Expenses Tracking</li>
+        </ul>
+      </p>
+      <br>
+      <p>
+        I was responsible for developing the frontend UI components and integrating backend APIs. I also coordinated between modules and ensured seamless UI/UX experience using consistent themes and internal testing.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

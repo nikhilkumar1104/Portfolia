@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Nikhil Kumar</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a4f0a22ac0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --side-bg: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+      --card: #181818;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    aside {
+      width: 260px;
+      background: #232323;
+      padding: 40px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: linear-gradient(145deg, #d1c4e9, #ede7f6);
+    }
+
+    .profile-info h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .profile-info p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      margin: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover .material-symbols-outlined {
+      transform: translateY(-3px);
+    }
+
+    nav a:hover {
+      transform: translateY(-4px);
+    }
+
+    nav a.active {
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+      margin-top: auto;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 60px;
+      margin-left: 260px;
+      min-width: 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #232323;
+      color: #fff;
+      font-size: 1.08rem;
+      padding: 13px 34px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      margin-bottom: 24px;
+    }
+
+    .contact-header {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .contact-desc {
+      font-size: 1.15rem;
+      color: #bdbdbd;
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    .contact-container {
+      display: flex;
+      gap: 60px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-form {
+      background: var(--card);
+      border-radius: 25px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      padding: 24px 40px;
+      min-width: 320px;
+      max-width: 550px;
+      flex: 1;
+    }
+
+    .contact-form h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      background: #181818;
+      color: var(--text);
+      font-size: 1rem;
+      box-shadow: inset 0 0 0 1px #333;
+      transition: 0.2s;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      box-shadow: inset 0 0 0 2px var(--accent);
+      background-color: #1f1f1f;
+    }
+
+    .contact-form button {
+      width: 100%;
+      background: #232323;
+      color: #fff;
+      border: none;
+      font-size: 1.08rem;
+      padding: 13px 0;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(124, 77, 255, 0.25);
+    }
+
+    .contact-details {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      padding: 24px 20px;
+    }
+
+    .contact-details h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: rgba(124, 77, 255, 0.85);
+    }
+
+    .contact-details .info div {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-details .info a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .contact-details .info i {
+      color: var(--accent);
+    }
+
+    .contact-details .social a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+
+    .contact-details .social a:hover {
+      color: var(--accent);
+    }
+
+    .copyright {
+      margin-top: 60px;
+      font-size: 0.95rem;
+      color: #888;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 30px;
+      }
+      .contact-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+      main {
+        margin-left: 0;
+        padding: 18px;
+      }
+    }
+    
+    .badge {
+      font-size: 0.85rem;
+      color: #027a48;
+      background: #d1fadf;
+      padding: 6px 12px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div>
+      <div class="profile-card">
+        <img src="{{ url_for('static', filename='images/nikhil.jpg') }}" alt="Nikhil Kumar">
+        <div class="profile-info">
+          <h2>Nikhil Kumar</h2>
+          <p>Software Developer & Creator</p>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+      <nav>
+        <a href="/" class="home-link">
+          <span class="material-symbols-outlined">home</span>
+          <span>Home</span>
+        </a>
+        <a href="/about">
+          <span class="material-symbols-outlined">person</span>
+          <span>About</span>
+        </a>
+        <a href="/projects">
+          <span class="material-symbols-outlined">work</span>
+          <span>Projects</span>
+        </a>
+        <a href="/contact" class="active">
+          <span class="material-symbols-outlined">mail</span>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube" style="font-size:2rem;"></i></a>
+      <a href="https://www.instagram.com/nikhil__shetty___" target="_blank"><i class="fab fa-instagram" style="font-size:2rem;"></i></a>
+      <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github" style="font-size:2rem;"></i></a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in" style="font-size:2rem;"></i></a>
+    </div>
+  </aside>
+
+  <main>
+
+
+    <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 10px;">
+      <span class="badge" style="background: #232323; color: #fff; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; box-shadow: 0 2px 12px rgba(0,0,0,0.12);">🟢 Available for Work</span>
+      <a href="static/cv/Nikhil.pdf" download class="btn" style="background: #232323; color: #fff; border: none; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 12px rgba(0,0,0,0.12); margin-left: 850px; margin-top: -2px;">Download CV</a>
+    </div>
+
+
+    <span class="badge">🟢 Available for Work</span>
+    <h1 class="contact-header">Let's Connect!</h1>
+    <div class="contact-desc">Feel free to reach out with your projects, questions, or to connect. I'll respond promptly, and we can explore opportunities together.</div>
+    <hr style="border: none; border-top: 1.5px solid #444; margin: 32px 0 0 0;">
+
+    <div class="contact-container">
+      <form class="contact-form" action="https://formspree.io/f/movllwow" method="POST">
+        <h3>Get in Touch</h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="Your email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Type your message"></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-details">
+        <h3>Contact</h3>
+        <div class="info">
+          <div><i class="fas fa-envelope"></i> <a href="mailto:nikhilshetty0411@gmail.com">nikhilshetty0411@gmail.com</a></div>
+          <div><i class="fas fa-phone-alt"></i> <a href="tel:+917090235269">+91 70902 35269</a></div>
+        </div>
+
+        <h3>Social</h3>
+        <div class="social">
+          <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://www.instagram.com/nikhil__shetty___/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="copyright">© 2023 Nikhil Kumar. All rights reserved.</footer>
+  </main>
+</body>
+</html>

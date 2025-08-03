@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – Nikhil Kumar</title>
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- Font Awesome for Social Icons -->
+  <script src="https://kit.fontawesome.com/a4f0a22ac0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --side-bg: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+      --card: #181818;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      transition: all 0.3s ease;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    aside {
+      width: 260px;
+      background: #232323;
+      padding: 40px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .profile-info h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .profile-info p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      margin: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover .material-symbols-outlined {
+      transform: translateY(-3px);
+    }
+
+    nav a:hover {
+      transform: translateY(-4px);
+    }
+
+    nav a.active {
+      font-weight: bold;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 50px;
+      margin-left: 260px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #027a48;
+      background: #d1fadf;
+      padding: 6px 12px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+    }
+
+    .about-header {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .about-section {
+      margin-bottom: 40px;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+
+    .about-content {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      max-width: none;
+      color: var(--text);
+    }
+
+    .resume-section {
+      display: flex;
+      gap: 30px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .resume-container {
+      flex: 1 1 400px;
+      max-width: 500px;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+
+    .resume-image {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn {
+      background: #232323;
+      color: #fff;
+      border: none;
+      font-size: 1.08rem;
+      padding: 13px 34px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+      main {
+        margin-left: 0;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <div>
+      <div class="profile-card">
+        <img src="static/images/nikhil.jpg" alt="Nikhil Kumar">
+        <div class="profile-info">
+          <h2>Nikhil Kumar</h2>
+          <p>Software Developer & Creator</p>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+      <nav>
+        <a href="/"><span class="material-symbols-outlined">home</span><span>Home</span></a>
+        <a href="/about" class="active"><span class="material-symbols-outlined">person</span><span>About</span></a>
+        <a href="/projects"><span class="material-symbols-outlined">work</span><span>Projects</span></a>
+        <a href="/contact"><span class="material-symbols-outlined">mail</span><span>Contact</span></a>
+      </nav>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/nikhil__shetty___/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </aside>
+
+  <main>
+    <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 10px;">
+      <span class="badge">🟢 Available for Work</span>
+      <a href="static/cv/Nikhil.pdf" download class="btn" style="margin-left: auto;">Download CV</a>
+    </div>
+
+    <h1 class="about-header">About Me</h1>
+
+    <div class="about-section">
+      <h2>🎓 Education</h2>
+      <p class="about-content">I completed my B.E. in Computer Science & Engineering (Data Science) from <strong>Sahyadri College of Engineering & Management</strong>, Mangaluru.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>💼 Internship Experience</h2>
+      <p class="about-content">I worked as a <strong>Scrum Master</strong> and full-stack CRM developer at <strong>Ukshati Technologies Pvt. Ltd.</strong>, leading feature development and UI refinement using React.js, Node.js, MySQL, and Docker. Previously, I interned at <strong>Coding Key LLP</strong>, where I built a search engine with Python, Flask, SQL, and BeautifulSoup.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>⚙️ Skills & Strengths</h2>
+      <p class="about-content">I am skilled in full-stack development, AI/ML, data visualization, and system design. My toolset includes <strong>Python, Flask, React.js, SQL, Streamlit, OpenCV, Git</strong>, and more.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>📹 Content Creation</h2>
+      <p class="about-content">I create tech and lifestyle content on YouTube at <strong>@lifeasnikki11</strong> and share educational and editing tutorials on Instagram and LinkedIn.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>📄 My Resume</h2>
+      <div class="resume-section">
+        <div class="resume-container">
+          <img class="resume-image" src="{{ url_for('static', filename='cv/resume_page_1.jpg') }}" alt="Resume Page 1">
+        </div>
+        <div class="resume-container">
+          <img class="resume-image" src="{{ url_for('static', filename='cv/resume_page_2.jpg') }}" alt="Resume Page 2">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

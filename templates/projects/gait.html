@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Human Gait AI Detection – Nikhil Kumar</title>
+
+  <!-- Icons & Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a4f0a22ac0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --card: #181818;
+      --text: #f1f5f9;
+      --accent: #7c4dff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      display: flex;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #232323 0%, #444444 50%, #232323 100%);
+      background-size: 200% 200%;
+      animation: gradientMove 8s ease-in-out infinite;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    aside {
+      width: 260px;
+      background: #232323;
+      padding: 40px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .profile-info h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .profile-info p {
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      margin: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover .material-symbols-outlined,
+    nav a:hover {
+      transform: translateY(-4px);
+    }
+
+    .material-symbols-outlined {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+      margin-top: auto;
+    }
+
+    .social-icons a {
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: var(--accent);
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 60px;
+      margin-left: 260px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+
+    .project-img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 30px;
+      }
+    }
+    
+    .badge {
+      font-size: 0.85rem;
+      color: #027a48;
+      background: #d1fadf;
+      padding: 6px 12px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside>
+    <div>
+      <div class="profile-card">
+        <img src="/static/images/nikhil.jpg" alt="Nikhil">
+        <div class="profile-info">
+          <h2>Nikhil Kumar</h2>
+          <p>Software Developer & Creator</p>
+        </div>
+      </div>
+      <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+      <nav>
+        <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+        <a href="/about"><span class="material-symbols-outlined">person</span>About</a>
+        <a href="/projects" class="active"><span class="material-symbols-outlined">work</span>Projects</a>
+        <a href="/contact"><span class="material-symbols-outlined">mail</span>Contact</a>
+      </nav>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@lifeasnikki11" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/nikhil__shetty___/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/nikhilkumar1104" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/nikhilkumar1104/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+
+
+    <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 10px;">
+      <span class="badge" style="background: #232323; color: #fff; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; box-shadow: 0 2px 12px rgba(0,0,0,0.12);">🟢 Available for Work</span>
+      <a href="static/cv/Nikhil.pdf" download class="btn" style="background: #232323; color: #fff; border: none; font-size: 1.08rem; padding: 13px 34px; border-radius: 30px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 12px rgba(0,0,0,0.12); margin-left: 850px; margin-top: -2px;">Download CV</a>
+    </div>
+
+
+    <h1>Human Gait AI Detection</h1>
+
+    <img src="/static/project/gait.jpeg" alt="Gait Detection Project" class="project-img">
+
+    <div class="section">
+      <h2>🔍 Objective</h2>
+      <p>
+        The goal of this project is to identify and analyze a person's gait (walking pattern) using real-time video and AI models. This technology has practical applications in healthcare, particularly for diagnosing movement disorders or post-injury rehabilitation.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>🧠 Technologies Used</h2>
+      <p>
+        Python, Flask, OpenCV, MediaPipe, CNN, ANN, MySQL
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>⚙️ How It Works</h2>
+      <p>
+        The system uses a webcam or video upload to capture walking motion. MediaPipe extracts body landmarks from each frame. These coordinates are passed to a hybrid deep learning model (CNN + ANN) that classifies whether the gait is normal or abnormal, and results are stored in a MySQL database.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>📈 Outcome</h2>
+      <p>
+        The model achieved 90%+ accuracy. The project demonstrates the integration of computer vision, deep learning, and web deployment for real-world applications in healthcare.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
